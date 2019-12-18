@@ -1,5 +1,7 @@
 package quotes
 
+import "math/rand"
+
 // Favs Slice of Rumi quotes
 func Favs() []string {
 	return []string{
@@ -7,4 +9,9 @@ func Favs() []string {
 		"Out beyond ideas of wrongdoing and rightdoing there is a field. I'll meet you there. When the soul lies down in that grass the world is too full to talk about.",
 		"The wound is the place where the Light enters you.",
 	}
+}
+
+// Random return random quote
+func Random() string {
+	return Favs()[rand.Intn(len(Favs()))]
 }
