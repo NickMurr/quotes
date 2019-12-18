@@ -1,6 +1,9 @@
 package quotes
 
-import "math/rand"
+import (
+	"math/rand"
+	"time"
+)
 
 // Favs Slice of Rumi quotes
 func Favs() []string {
@@ -13,5 +16,6 @@ func Favs() []string {
 
 // Random return random quote
 func Random() string {
+	rand.Seed(time.Now().UnixNano())
 	return Favs()[rand.Intn(len(Favs()))]
 }
